@@ -51,7 +51,7 @@ func NewSkalse() Skalse {
 		Person: Person{
 			name:     "Vlad",
 			nickname: "Skalse",
-			age:      18,
+			age:      constants.Eighteen,
 			sex:      types.Male,
 		},
 		hobby: "Vibe coding in `Go` 25/8",
@@ -76,7 +76,7 @@ func NewYaCode() YaCode {
 		Person: Person{
 			name:     "Dima",
 			nickname: "YaCode",
-			age:      20,
+			age:      constants.Twenty,
 			sex:      types.Male,
 		},
 		languageStack: []string{"Go", "Python", "Rust"},
@@ -101,16 +101,16 @@ func NewOleksandr() Oleksandr {
 		Person: Person{
 			name:     "Sasha",
 			nickname: "OleKsandr",
-			age:      19,
+			age:      constants.Nineteen,
 			sex:      types.Male,
 		},
-		completedTasks: 1241245125321,
+		completedTasks: constants.CountCompletedTasks,
 	}
 }
 
 // Oleksandr only adds completed tasks; cannot decrease them
 func (o Oleksandr) UncompleteTask() {
-	o.completedTasks--
+	o.completedTasks-- // nolint
 }
 
 func (o *Oleksandr) CompleteTask() {
